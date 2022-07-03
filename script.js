@@ -11,10 +11,17 @@ function handleSubmit(event) {
   event.preventDefault();
   const searched = document.getElementById("search");
   const searchValue = searched.value.toUpperCase();
-  Object.keys(obj).map((key) => {
+
+  searched.value = "";
+
+  companyAbrev.innerText = "";
+  companyName.innerText = "";
+  Object.keys(obj).forEach((key, index) => {
     if (searchValue === key) {
       companyAbrev.innerText = searchValue;
       companyName.innerText = obj[searchValue];
+    } else if (!Object.keys(obj).includes(searchValue)) {
+      companyAbrev.innerText = `${searchValue} is not in our database. Please search again`;
     }
   });
 }

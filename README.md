@@ -20,6 +20,11 @@ Select one to view the full company name.
 - [x] Partial matching is available (e.g. if a user searches for “DC”, results are returned for
 both “DCMS” and “DCLG”)
 
+## How to run locally
+- Open your chosen terminal.
+- Copy the url of this repository.
+- Clone the repo onto your computer.
+
 ## Improvements
 - Add styling to dropdown menu.
 - Add styling to make the page look nicer.

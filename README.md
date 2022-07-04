@@ -6,7 +6,7 @@ Make a start on building a UK Government acronym search, that allows users to se
 Spend a maximum of 2 hours on the task.
 
 ## Instructions
-Open the link [here](bbc.co.uk).
+Open the link [here]().
 
 Type in a letter to see related company abbreviations.
 

@@ -9,6 +9,7 @@ const companyName = document.getElementById("companyName");
 const searched = document.getElementById("search");
 search.addEventListener("input", updateValue);
 const suggestions = document.getElementById("suggested");
+const dropdown = document.getElementById("acronyms");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -28,10 +29,15 @@ function handleSubmit(event) {
 
 // Getting user input into an array
 let typed = [];
-//Made to display multiple suggestions
-let abbrev = [];
+
 function updateValue(e) {
   const letter = e.data;
+
+  //Made to display multiple suggestions
+  let abbrev = [];
+  let abbrev2 = [];
+  let abbrev3 = [];
+  let abbrev4 = [];
 
   typed.push(letter.toUpperCase());
   let joined = typed.join("");
@@ -40,33 +46,33 @@ function updateValue(e) {
     // Show any abbreviations that begin with first letter that is typed
     if (key[0].includes(typed)) {
       abbrev.push(key);
-      suggestions.innerText = `Suggestions: ${abbrev.join(", ")}`;
     } else if (key[0] === joined[0] && key[1] === joined[1]) {
       //Filter
-      const abbrev2 = abbrev.filter((abbreviation) =>
-        abbreviation.includes(joined)
-      );
-      suggestions.innerText = `Suggestions: ${abbrev2.join(", ")}`;
+      abbrev.filter((abbreviation) => abbreviation.includes(joined));
     } else if (
       key[0] === joined[0] &&
       key[1] === joined[1] &&
       key[2] === joined[2]
     ) {
-      const abbrev3 = abbrev2.filter((abbreviation) =>
-        abbreviation.includes(joined)
-      );
-      suggestions.innerText = `Suggestions: ${abbrev3.join(", ")}`;
+      abbrev.filter((abbreviation) => abbreviation.includes(joined));
     } else if (
       key[0] === joined[0] &&
       key[1] === joined[1] &&
       key[2] === joined[2] &&
       key[3] === joined[3]
     ) {
-      const abbrev4 = abbrev3.filter((abbreviation) =>
-        abbreviation.includes(joined)
-      );
-      suggestions.innerText = `Suggestions: ${abbrev4.join(", ")}`;
+      abbrev.filter((abbreviation) => abbreviation.includes(joined));
     }
+  });
+  createDropdown(abbrev);
+}
+
+function createDropdown(arr) {
+  arr.map((acronym) => {
+    const option = document.createElement("option");
+    option.className = "acronym-options";
+    option.textContent = acronym;
+    dropdown.appendChild(option);
   });
 }
 

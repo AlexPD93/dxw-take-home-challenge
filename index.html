@@ -9,9 +9,12 @@
   </head>
   <body>
     <h1>Uk Government Acronym Search</h1>
-    <form action="" id="form">
+    <form id="form">
       <label for="search">Search for an acronym:</label>
-      <input type="text" name="search" id="search" />
+      <div class="dropdown-container">
+        <input type="text" list="acronyms" name="search" id="search" />
+        <datalist id="acronyms"> </datalist>
+      </div>
       <button type="submit" id="submit">Search</button>
     </form>
     <p id="suggested"></p>

@@ -1,4 +1,4 @@
-# DWX Mock Government Acronym search
+# DXW Mock Government Acronym search
 
 ## Task
 Make a start on building a UK Government acronym search, that allows users to search for an acronym, and will return the matching organisation for that acronym, if one exists.
